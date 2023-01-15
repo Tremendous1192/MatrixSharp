@@ -33,7 +33,7 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
         /// </summary>
         /// <param name="array">配列</param>
         /// <param name="dummy">ダミー変数</param>
-        public ColumnVector(double[] array, bool dummy)
+        internal ColumnVector(double[] array, bool dummy)
         {
             _array = array;
             _dim = array.Length;

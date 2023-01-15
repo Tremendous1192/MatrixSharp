@@ -6,6 +6,12 @@
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>MatrixSharp</Title>
+    <Version>0.0.2</Version>
+    <Authors>Tremendous1192</Authors>
+    <Company>SelfEmployed</Company>
+    <PackageProjectUrl>https://github.com/Tremendous1192/MatrixSharp</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
