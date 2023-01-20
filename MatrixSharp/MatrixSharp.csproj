@@ -8,10 +8,18 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>MatrixSharp</Title>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>Tremendous1192</Authors>
     <Company>SelfEmployed</Company>
     <PackageProjectUrl>https://github.com/Tremendous1192/MatrixSharp</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
