@@ -1,8 +1,17 @@
 # MatrixSharp
-手計算に近い感覚で行列とベクトルの基本的な計算を行うことを目指したパッケージです。
+Provides matrix and vector and more as hand calculation.
 
 
-[詳細をZenn](https://zenn.dev/tremendous1192/articles/824b2d32381173)しておりますので、そちらをご確認頂けますと幸いです。
+```cs
+namespace Tremendous1192.SelfEmployed.MatrixSharp
+{
+	public unsafe partial class ColumnVector
+	public unsafe partial class Matrix
+	public unsafe partial class RowVector
+}
+```
+
+[Japanese read me is in Zenn](https://zenn.dev/tremendous1192/articles/824b2d32381173)
 
 [GitHub](https://github.com/Tremendous1192/MatrixSharp)
 
