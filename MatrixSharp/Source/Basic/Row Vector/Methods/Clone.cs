@@ -13,6 +13,6 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
         /// </summary>
         /// <returns>ColumnVector</returns>
         public RowVector Clone()
-        { return new RowVector(_array); }
+        { return new RowVector((double[])_array.Clone()); }
     }
 }

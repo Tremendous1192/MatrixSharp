@@ -16,7 +16,10 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
 
 [Nuget](https://www.nuget.org/packages/MatrixSharp/)
 
-ver.0.0.5
-Append internal function faster matrix addition.
-If your matrix element number (row x column) is multiples of 2, 3, or 4, 5,
-you are able to calculate matrix addition quickly.
+
+# ver 0.0.6  
+Modify Clone Method of Matrix and Vector classes.
+
+# ver.0.0.5
+Append internal function faster matrix addition.  
+If your matrix element number (row x column) is multiples of 2, 3, or 4, 5, you are able to calculate matrix addition quickly.

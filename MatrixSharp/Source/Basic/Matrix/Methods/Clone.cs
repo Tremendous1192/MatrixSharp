@@ -13,6 +13,6 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
         /// </summary>
         /// <returns>Matrix</returns>
         public Matrix Clone()
-        { return new Matrix(_array, false); }
+        { return new Matrix((double[,])_array.Clone(), false); }
     }
 }
