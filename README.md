@@ -13,9 +13,12 @@ namespace YourApp
     {
         static void Main(string[] args)
         {
-            Matrix m = new Matrix(in double[,] array);
-            ColumnVector c = new ColumnVector(double[] array);
-            RowVector r = new RowVector(double[] array);
+            double[,] array1 = new double[2, 3]{{1, 2, 3}, {4, 5, 6}};
+            Matrix m = new Matrix(array1);
+
+            double[] array2 = new double[2]{1, 2};
+            ColumnVector c = new ColumnVector(array2);
+            RowVector r = new RowVector(array2);
         }
     }
 }
@@ -27,6 +30,9 @@ namespace YourApp
 
 [Nuget](https://www.nuget.org/packages/MatrixSharp/)
 
+
+# ver 0.0.8
+Modify README
 
 # ver 0.0.7
 Append internal function of faster matrix subtract.  
