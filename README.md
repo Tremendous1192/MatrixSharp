@@ -1,12 +1,23 @@
 # MatrixSharp
-Provides matrix and vector and more like hand calculation.
+It is simple matrix calculation package.
+It provides matrix and vector and more like hand calculation.
 
+# Constructor
 ```cs
-namespace Tremendous1192.SelfEmployed.MatrixSharp
+using System;
+// My package
+using Tremendous1192.SelfEmployed.MatrixSharp;
+namespace YourApp
 {
-	public unsafe partial class ColumnVector{}
-	public unsafe partial class Matrix{}
-	public unsafe partial class RowVector{}
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Matrix m = new Matrix(in double[,] array);
+            ColumnVector c = new ColumnVector(double[] array);
+            RowVector r = new RowVector(double[] array);
+        }
+    }
 }
 ```
 
@@ -17,7 +28,12 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
 [Nuget](https://www.nuget.org/packages/MatrixSharp/)
 
 
+# ver 0.0.7
+Append internal function of faster matrix subtract.  
+If your matrix element number (row x column) is multiples of 2, 3, or 4, 5, your calculation will be faster than usual.
+
 # ver 0.0.6  
+3/Feb./2023  
 Modify Clone Method of Matrix and Vector classes.
 
 # ver.0.0.5

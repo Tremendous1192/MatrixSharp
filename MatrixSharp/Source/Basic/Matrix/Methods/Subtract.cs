@@ -22,14 +22,23 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
                 throw new ArgumentException("行列の形が異なります。計算できません");
             }
 
-            double[,] calculated = new double[left._row, left.Column];
-            fixed (double* pleft = left._array, pright = right._array, pcalculated = calculated)
+            if (left._array.Length % 5 == 0)
             {
-                for (double* pl = pleft, endpl = pleft + left._array.Length, pr = pright, pc = pcalculated; pl != endpl; ++pl, ++pr, ++pc)
-                { *pc = *pl - *pr; }
+                return new Matrix(Matrix.SubtractLength5(left._array, right._array), false);
             }
-
-            return new Matrix(calculated, false);
+            else if (left._array.Length % 4 == 0)
+            {
+                return new Matrix(Matrix.SubtractLength4(left._array, right._array), false);
+            }
+            else if (left._array.Length % 3 == 0)
+            {
+                return new Matrix(Matrix.SubtractLength3(left._array, right._array), false);
+            }
+            else if (left._array.Length % 2 == 0)
+            {
+                return new Matrix(Matrix.SubtractLength2(left._array, right._array), false);
+            }
+            return new Matrix(Matrix.SubtractLength1(left._array, right._array), false);
         }
     }
 }
