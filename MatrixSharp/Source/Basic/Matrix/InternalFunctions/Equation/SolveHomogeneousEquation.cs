@@ -15,6 +15,18 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
         /// <returns></returns>
         internal static double[] SolveHomogeneousEquation(in double[,] left)
         {
+            // ガウスの消去法
+            double[] right = new double[left.GetLength(0)];
+            double[,] calculatedMatrix;
+            double[] calculatedVector;
+            Matrix.GaussianElimination(left, right, out calculatedMatrix, out calculatedVector);
+
+            // 後退代入
+            return Matrix.BackSubstitution(ref calculatedMatrix, ref calculatedVector);
+
+
+
+
             // 初期化
             double[,] reduced = new double[left.GetLength(0), left.GetLength(1)]; // 左辺の行列
             double[] result = new double[left.GetLength(0)]; // 方程式の解

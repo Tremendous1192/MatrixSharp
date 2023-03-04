@@ -30,18 +30,22 @@ namespace YourApp
 
 [Nuget](https://www.nuget.org/packages/MatrixSharp/)
 
+# Revision history
+## ver 0.0.9
+Modified the algorithm to solve homogeneous equation.
+Don't worry any user does NOT need to modify your code.
 
-# ver 0.0.8
+## ver 0.0.8
 Modify README
 
-# ver 0.0.7
+## ver 0.0.7
 Append internal function of faster matrix subtract.  
 If your matrix element number (row x column) is multiples of 2, 3, or 4, 5, your calculation will be faster than usual.
 
-# ver 0.0.6  
+## ver 0.0.6  
 3/Feb./2023  
 Modify Clone Method of Matrix and Vector classes.
 
-# ver.0.0.5
+## ver.0.0.5
 Append internal function faster matrix addition.  
 If your matrix element number (row x column) is multiples of 2, 3, or 4, 5, you are able to calculate matrix addition quickly.
