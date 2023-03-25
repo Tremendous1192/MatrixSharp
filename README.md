@@ -32,7 +32,9 @@ namespace YourApp
 
 # Revision history
 ## ver 0.0.11
+Cleaned comment out code.
 
+Don't worry any user does NOT need to modify your code.
 
 ## ver 0.0.10
 Modified the connection between public multiply method and internal function.

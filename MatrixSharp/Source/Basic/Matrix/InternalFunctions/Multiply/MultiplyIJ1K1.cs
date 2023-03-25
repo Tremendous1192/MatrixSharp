@@ -23,13 +23,11 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
                 int count = 0;
                 for (double* pcal = pcalculated, endP = pcalculated + calculated.Length; pcal != endP; ++pcal)
                 {
-                    fixed (double* plfix = &left[count / calculated.GetLength(1), 0],
-                        prfix = &rightT[count % calculated.GetLength(1), 0])
+                    double* plfix = &pleft[count / calculated.GetLength(1) * left.GetLength(1)];
+                    double* prfix = &prightT[count % calculated.GetLength(1) * rightT.GetLength(1)];
+                    for (double* pl = plfix, pr = prfix, endP2 = plfix + left.GetLength(1); pl != endP2; ++pl, ++pr)
                     {
-                        for (double* pl = plfix, pr = prfix, endP2 = plfix + left.GetLength(1); pl != endP2; ++pl, ++pr)
-                        {
-                            *pcal += *pl * *pr;
-                        }
+                        *pcal += *pl * *pr;
                     }
                     ++count;
                 }
