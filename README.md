@@ -31,6 +31,10 @@ namespace YourApp
 [Nuget](https://www.nuget.org/packages/MatrixSharp/)
 
 # Revision history
+## ver 0.0.12
+Modified internal function of matrix multiply.
+If left matrix's column number is multiples of 2, 3, or 4, your calculation will be faster than previous version.
+
 ## ver 0.0.11
 Cleaned comment out code.
 

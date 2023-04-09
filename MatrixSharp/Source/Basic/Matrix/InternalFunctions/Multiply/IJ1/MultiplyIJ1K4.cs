@@ -11,25 +11,28 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
         /// <summary>
         /// 行列積
         /// </summary>
+        /// <remarks>
+        /// 左側の行列の列数が4の倍数の場合、for文を4ずつ進めることで時短できる
+        /// </remarks>
         /// <param name="left">左側の積</param>
         /// <param name="rightT">右側の積</param>
         /// <returns></returns>
-        internal static double[,] MultiplyIJ1K1(in double[,] left, in double[,] rightT)
+        internal static double[,] MultiplyIJ1K4(in double[,] left, in double[,] rightT)
         {
             double[,] calculated = new double[left.GetLength(0), rightT.GetLength(0)];
 
             fixed (double* pcalculated = calculated, pleft = left, prightT = rightT)
             {
                 int count = 0;
-                for (double* pcal = pcalculated, endP = pcalculated + calculated.Length; pcal != endP; ++pcal)
+                for (double* pcal = pcalculated, endP = pcalculated + calculated.Length; pcal != endP; ++pcal, ++count)
                 {
                     double* plfix = &pleft[count / calculated.GetLength(1) * left.GetLength(1)];
                     double* prfix = &prightT[count % calculated.GetLength(1) * rightT.GetLength(1)];
-                    for (double* pl = plfix, pr = prfix, endP2 = plfix + left.GetLength(1); pl != endP2; ++pl, ++pr)
+                    for (double* pl = plfix, pr = prfix, endP2 = plfix + left.GetLength(1); pl != endP2;
+                        pl += 4, pr += 4)
                     {
-                        *pcal += *pl * *pr;
+                        *pcal += *pl * *pr + *(pl + 1) * *(pr + 1) + *(pl + 2) * *(pr + 2) + *(pl + 3) * *(pr + 3);
                     }
-                    ++count;
                 }
             }
 

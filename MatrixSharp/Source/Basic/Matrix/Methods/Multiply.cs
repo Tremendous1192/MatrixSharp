@@ -22,9 +22,21 @@ namespace Tremendous1192.SelfEmployed.MatrixSharp
                 throw new ArgumentException("左の行列の列数と、右の行列の行数を揃えてください");
             }
 
-            double[,] calculated = MultiplyIJ1K1(left._array, right.Transpose()._array);
 
-            return new Matrix(calculated, false);
+            if (left._column % 4 == 0)
+            {
+                return new Matrix(MultiplyIJ1K4(left._array, right.Transpose()._array));
+            }
+            else if (left._column % 3 == 0)
+            {
+                return new Matrix(MultiplyIJ1K3(left._array, right.Transpose()._array));
+            }
+            else if (left._column % 2 == 0)
+            {
+                return new Matrix(MultiplyIJ1K2(left._array, right.Transpose()._array));
+            }
+
+            return new Matrix(MultiplyIJ1K1(left._array, right.Transpose()._array), false);
         }
     }
 }
